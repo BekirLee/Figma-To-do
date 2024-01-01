@@ -3,10 +3,11 @@
   padding: 0;
 }
 
-.inputs {
+.lists {
   width: 540px;
   height: 40px;
   flex-shrink: 0;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
 }
 
 header .background .background_photo {
@@ -20,6 +21,7 @@ main .todoList {
   position: absolute;
   top: 50%;
   left: 50%;
+  border-radius: 5px;
   transform: translate(-50%, -50%);
 }
 main .todoList .listHead form {
@@ -34,11 +36,17 @@ main .todoList .listHead form input {
 }
 main .todoList .listBody {
   margin-top: 30px;
+  height: 439px;
+  overflow: hidden;
+  border-radius: 5px;
+  height: 200px;
+  background-color: #fff;
 }
 main .todoList .listBody .addedInputs .listsUl .addedList {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px 11px;
 }
 main .todoList .listBody .addedInputs .listsUl .addedList .addedList_checkbox {
   display: flex;
@@ -54,6 +62,10 @@ main .todoList .listBody .addedInputs .listsUl .addedList .addedList_checkbox in
 }
 main .todoList .listBody .addedInputs .listsUl .addedList .addedList_checkbox input[type=checkbox]:checked {
   background: url("../img/checked_svg.svg");
+}
+main .todoList .listBody .addedInputs .listsUl .addedList .addedList_checkbox input[type=checkbox]:checked ~ .name {
+  text-decoration: line-through;
+  opacity: 0.4;
 }
 main .todoList .listBody .addedInputs .listsUl .addedList .otherBtns {
   justify-content: space-between;
