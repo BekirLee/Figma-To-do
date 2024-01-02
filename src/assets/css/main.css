@@ -111,6 +111,13 @@ main .todoList .listBody .addedInputs .listsUl .addedList .addedList_checkbox in
   text-decoration: line-through;
   opacity: 0.4;
 }
+main .todoList .listBody .addedInputs .listsUl .addedList .otherBtns button {
+  background-color: #9495A5;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  color: #fff;
+}
 main .todoList .editButtons {
   display: flex;
   align-items: center;
