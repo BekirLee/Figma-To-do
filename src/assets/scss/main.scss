@@ -5,7 +5,7 @@
     padding: 0;
 }
 
-body{
+body {
     background-color: $mercury;
 }
 
@@ -17,16 +17,36 @@ body{
     box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.50);
 }
 
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $mulledWine;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 header {
     .background {
 
 
-        // height: 100vh;
         .background_photo {
             width: 100%;
-            height: 75vh;
+            height: 47vh;
             object-fit: cover;
-            background: url('../img/Bg_img.png');
+            opacity: 0.8;
+            background: url('../img/Bg_img.png'), rgb(167, 15, 167) 0px 0px / 100% 100% no-repeat;
+
+
         }
     }
 }
@@ -34,18 +54,33 @@ header {
 main {
     .todoList {
         position: absolute;
-        top: 50%;
+        top: 65%;
+        // border-radius: 5px 0 0 5px;
         left: 50%;
-        border-radius: 5px;
         transform: translate(-50%, -50%);
 
-        .listHead {
+        .shapeIcon {
+            position: absolute;
+            display: flex;
+            width: 100%;
+            top: -20%;
+            left: 50%;
+            align-items: center;
+            transform: translate(-50%, -50%);
+            justify-content: space-between;
 
-            // width: 540px;
-            // height: 40px;
-            // flex-shrink: 0;
-            // div {
-            // display: flex;
+            h2 {
+                color: $white;
+                font-family: Josefin Sans;
+                font-size: 40px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                letter-spacing: 15px;
+            }
+        }
+
+        .listHead {
 
             form {
 
@@ -59,21 +94,27 @@ main {
                     padding: 10px 11px;
                 }
 
-                // }    
             }
         }
 
         .listBody {
+            width: 560px;
             margin-top: 30px;
             overflow-y: scroll;
-            border-radius: 5px;
-            height: 235px;
+            border-radius: 5px 5px 0 0;
+
+            height: 240px;
             background-color: $white;
             box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.50);
 
+
+
             .addedInputs {
+
+                // width: 100%;
                 .listsUl {
                     .addedList {
+                        width: 530px;
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
@@ -90,7 +131,6 @@ main {
                                 height: 24px;
                                 border: 1px solid #000;
                                 border-radius: 15px;
-                                // background: url('../img/checked_svg.svg');
                             }
 
                             input[type='checkbox']:checked {
@@ -102,18 +142,79 @@ main {
                                 opacity: .4;
                             }
 
-                            // padding: 4px;
                         }
 
 
                         .otherBtns {
-                            // display: flex;
-                            justify-content: space-between;
-                            align-items: center;
+                            // justify-content: space-between;
+                            // align-items: center;
                         }
                     }
                 }
             }
+        }
+
+        .editButtons {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            background-color: $white;
+            border-radius: 0px 0px 5px 5px;
+
+            .leftItems {
+                color: $MountainMist;
+                font-family: Josefin Sans;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                background-color: $white;
+                border: none;
+                letter-spacing: -0.194px;
+            }
+
+            .statusItems {
+                button {
+                    color: $MountainMist;
+                    font-family: Josefin Sans;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    letter-spacing: -0.194px;
+                    background-color: $white;
+                    border: none;
+                    padding: 3px;
+                }
+            }
+
+            .clearItems {
+                button {
+                    color: $MountainMist;
+                    font-family: Josefin Sans;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    letter-spacing: -0.194px;
+                    background-color: $white;
+                    border: none;
+                }
+            }
+        }
+
+        .drag-drop {
+            color: $MountainMist;
+            position: relative;
+            left: 190px;
+            font-family: Josefin Sans;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: -0.194px;
+            margin-top: 50px;
         }
     }
 }

@@ -9,6 +9,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- font-Family -->
     <link
         href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Josefin+Sans:ital,wght@1,700&family=League+Spartan:wght@700&family=Noto+Sans:ital,wght@1,400;1,500&family=Plus+Jakarta+Sans:wght@700&family=Poppins:wght@700&display=swap"
         rel="stylesheet">
@@ -19,7 +20,7 @@
     <header>
         <div class="background">
             <div class="background_photo">
-                <!-- bg photo -->
+                <!-- <img src="./src/assets/img/" alt=""> -->
             </div>
         </div>
     </header>
@@ -28,20 +29,20 @@
 
         <div class="todoList">
             <div class="shapeIcon">
-                <h2>To Do</h2>
+                <h2>TODO</h2>
                 <img src="./src/assets/img/Combined Shape.svg" alt="">
             </div>
 
             <div class="listHead mainInput lists">
                 <form action="" class="todoList-form">
-                    <input type="text" name="" id="" placeholder="Create a new todo…" class="todoInput">
+                    <input type="text" name="" id="" placeholder="Create a new todo…" class="todoInput" autofocus>
                 </form>
             </div>
 
             <div class="listBody">
                 <div class="addedInputs">
                     <ul class="listsUl">
-                        <li class="addedList lists">
+                        <!-- <li class="addedList lists">
                             <div class="addedList_checkbox">
                                 <input type="checkbox" name="" id="" class="mainCheckbox">
                                 <p>Walk the Dog</p>
@@ -52,12 +53,29 @@
                                     <button>Edit</button>
                                 </div>
                             </div>
-                        </li>
+                        </li> -->
                     </ul>
 
 
                 </div>
 
+
+            </div>
+
+            <div class="editButtons">
+                <div class="leftItems">5 items left </div>
+                <div class="statusItems">
+                    <button type="button">All</button>
+                    <button type="button">Active</button>
+                    <button type="button">Completed</button>
+                </div>
+                <div class="clearItems">
+                    <button type="button">Clear Completed</button>
+                </div>
+            </div>
+
+            <div class="drag-drop">
+                Drag and drop to reo
             </div>
 
         </div>
