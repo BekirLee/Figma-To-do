@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+body {
+  background-color: #E3E4F1;
+}
+
 .lists {
   width: 540px;
   height: 40px;
@@ -37,11 +41,11 @@ main .todoList .listHead form input {
 }
 main .todoList .listBody {
   margin-top: 30px;
-  height: 439px;
-  overflow: hidden;
+  overflow-y: scroll;
   border-radius: 5px;
-  height: 200px;
+  height: 235px;
   background-color: #fff;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
 }
 main .todoList .listBody .addedInputs .listsUl .addedList {
   display: flex;
