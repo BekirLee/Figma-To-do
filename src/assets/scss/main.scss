@@ -44,7 +44,7 @@ header {
             height: 47vh;
             object-fit: cover;
             opacity: 0.8;
-            background: url('../img/Bg_img.png'), rgb(167, 15, 167) 0px 0px / 100% 100% no-repeat;
+            background: url('../img/Bg_img.png'), linear-gradient(225deg, #5596ff 0%, #ac2deb 100%);
 
 
         }
