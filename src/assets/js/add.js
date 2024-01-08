@@ -2,10 +2,21 @@ let listsUl = document.querySelector('.listsUl');
 let todoInput = document.querySelector('.todoInput')
 let todoListForm = document.querySelector('.todoList-form');
 
+let todos = [];
+
 // function addList() {
 todoListForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log(todoInput.value);
+    let todo = todoInput.value.trim();
+
+    let taskInfo = {
+        name: todo,
+        completed: "pending",
+    }
+
+    todos.push(taskInfo);
+
+    console.log(todo);
     listsUl.innerHTML += `  
     <li class="addedList lists">
         <div class="addedList_checkbox">
@@ -21,8 +32,16 @@ todoListForm.addEventListener('submit', (e) => {
     </li>`;
 
     todoInput.value = '';
+    localStorage.setItem('todos', JSON.stringify(todos));
+    console.log(todos);
 })
 
-// }
 
-console.log('hello')
+// todoInput.addEventListener('keyup', (e) => {
+//     if (e.key === 'Enter') {
+//         console.log(todo);
+//     }
+// })
+
+
+// console.log('hello')
