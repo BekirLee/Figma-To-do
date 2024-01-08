@@ -107,10 +107,6 @@ main .todoList .listBody .addedInputs .listsUl .addedList .addedList_checkbox in
 main .todoList .listBody .addedInputs .listsUl .addedList .addedList_checkbox input[type=checkbox]:checked {
   background: url("../img/checked_svg.svg");
 }
-main .todoList .listBody .addedInputs .listsUl .addedList .addedList_checkbox input[type=checkbox]:checked ~ .name {
-  text-decoration: line-through;
-  opacity: 0.4;
-}
 main .todoList .listBody .addedInputs .listsUl .addedList .otherBtns button {
   background-color: #9495A5;
   border-radius: 5px;

@@ -5,59 +5,64 @@ let todoListForm = document.querySelector('.todoList-form');
 let todos = JSON.parse(localStorage.getItem('todos')) || []; // nullish operators
 
 
-// function addList() {
-todoListForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    let todo = todoInput.value.trim();
+function addList() {
+    todoListForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let todo = todoInput.value.trim();
 
-    let taskInfo = {
-        name: todo,
-        completed: "pending",
-    }
+        let taskInfo = {
+            name: todo,
+            completed: "pending",
+        }
 
-    todos.push(taskInfo);
+        todos.push(taskInfo);
 
-    console.log(todo);
-    listsUl.innerHTML = '';
+        console.log(todo);
+        // console.log('hello');
+        // console.log('hello');
+        listsUl.innerHTML = '';
 
-    todos.forEach((todo, id) => {
-        listsUl.innerHTML += `  
+        todos.forEach((todo, id) => {
+            listsUl.innerHTML += `  
         <li class="addedList lists" id='${id}'>
             <div class="addedList_checkbox">
-                    <input type="checkbox" name="" id="" class="mainCheckbox">
+                    <input type="checkbox" name="" id="" class="mainCheckbox" onclick="updateTodo(this)"/>
                     <p class='name' >${todo.name}</p>
             </div>
             <div class="otherBtns">
                 <div class="btns">
-                    <button  onclick="updateTodo(this)" >Delete</button>
+                    <button >Delete</button>
                     <button>Edit</button>
                 </div>
             </div>
         </li>`;
 
 
+        })
+
+        todoInput.value = '';
+        localStorage.setItem('todos', JSON.stringify(todos));
+        console.log(todos);
     })
 
-    todoInput.value = '';
-    localStorage.setItem('todos', JSON.stringify(todos));
-    console.log(todos);
-})
+}
+addList();
 
 function updateTodo(e) {
-    // let parentElement = e.parentElement;
-    console.log(e);
+    let parent = e.parentElement.parentElement;
+    let text = e.nextElementSibling;
+
+
+    // console.log(checkbox);
+    if (e.checked) {
+        text.style.textDecoration = 'line-through';
+        todos[parent.id].isCompleted = 'done';
+    }
+    else {
+        console.log('hello')
+    }
+    localStorage.setItem('todos', JSON.stringify(todos));
 }
-updateTodo()
 
 
-// let getItemed = localStorage.getItem('todos', JSON.parse(todos));
-// console.log(getItemed);
 
-// todoInput.addEventListener('keyup', (e) => {
-//     if (e.key === 'Enter') {
-//         console.log(todo);
-//     }
-// })
-
-
-// console.log('hello')

@@ -137,10 +137,10 @@ main {
                                 background: url('../img/checked_svg.svg');
                             }
 
-                            input[type='checkbox']:checked~.name {
-                                text-decoration: line-through;
-                                opacity: .4;
-                            }
+                            // input[type='checkbox']:checked~.name {
+                            //     text-decoration: line-through;
+                            //     opacity: .4;
+                            // }
 
                         }
 
