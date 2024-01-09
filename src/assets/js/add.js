@@ -23,11 +23,12 @@ function addList() {
         listsUl.innerHTML = '';
 
         todos.forEach((todo, id) => {
+            let isCompleted = todo.completed === 'done' ? 'checked' : '';
             listsUl.innerHTML += `  
         <li class="addedList lists" id='${id}'>
             <div class="addedList_checkbox">
-                    <input type="checkbox" name="" id="" class="mainCheckbox" onclick="updateTodo(this)"/>
-                    <p class='name' >${todo.name}</p>
+                    <input type="checkbox" name="" id="" class="mainCheckbox" ${isCompleted} onclick="updateTodo(this)"/>
+                    <p class='name ${isCompleted}'  >${todo.name}</p>
             </div>
             <div class="otherBtns">
                 <div class="btns">
@@ -56,10 +57,11 @@ function updateTodo(e) {
     // console.log(checkbox);
     if (e.checked) {
         text.style.textDecoration = 'line-through';
-        todos[parent.id].isCompleted = 'done';
+        todos[parent.id].completed = 'done';
     }
     else {
-        console.log('hello')
+        text.style.textDecoration = 'none';
+        todos[parent.id].completed = 'pending';
     }
     localStorage.setItem('todos', JSON.stringify(todos));
 }

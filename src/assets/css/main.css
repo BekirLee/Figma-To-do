@@ -97,6 +97,9 @@ main .todoList .listBody .addedInputs .listsUl .addedList .addedList_checkbox {
   align-items: center;
   gap: 25px;
 }
+main .todoList .listBody .addedInputs .listsUl .addedList .addedList_checkbox .name.checked {
+  text-decoration: line-through !important;
+}
 main .todoList .listBody .addedInputs .listsUl .addedList .addedList_checkbox input[type=checkbox] {
   appearance: none;
   width: 24px;
