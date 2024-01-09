@@ -2,3 +2,23 @@ $mercury: #E3E4F1;
 $MountainMist: #9495A5;
 $mulledWine: #494C6B;
 $white: #fff;
+
+:root {
+    --bg-white: #fff;
+    --bg-Mercury: #e3e4f1;
+    --bg-OsloGrey: #908f8f;
+    --bg--GreyGoose: #D1D2DA;
+    --bg-DodgerBlue: #3a7cfd;
+    --bg-MulledWine: #494c6b;
+    --bg-MountainMist: #9495a5;
+    --bg-JasminePurple: #ac2deb;
+    --bg-CornflowerBlue: #5596ff;
+    --font-JosefinSans: "Josefin Sans";
+
+    /* Dark theme */
+    --bg-dark: #171823;
+    --input-dark: #25273D;
+    --text-dark: #767992;
+    --chckbox-dark: #393A4B;
+    --todo-text-dark: #C8CBE7;
+}

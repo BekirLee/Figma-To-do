@@ -1,3 +1,22 @@
+:root {
+  --bg-white: #fff;
+  --bg-Mercury: #e3e4f1;
+  --bg-OsloGrey: #908f8f;
+  --bg--GreyGoose: #D1D2DA;
+  --bg-DodgerBlue: #3a7cfd;
+  --bg-MulledWine: #494c6b;
+  --bg-MountainMist: #9495a5;
+  --bg-JasminePurple: #ac2deb;
+  --bg-CornflowerBlue: #5596ff;
+  --font-JosefinSans: "Josefin Sans";
+  /* Dark theme */
+  --bg-dark: #171823;
+  --input-dark: #25273D;
+  --text-dark: #767992;
+  --chckbox-dark: #393A4B;
+  --todo-text-dark: #C8CBE7;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -34,11 +53,13 @@ body {
 }
 
 header .background .background_photo {
+  height: 42vh;
   width: 100%;
-  height: 47vh;
-  object-fit: cover;
   opacity: 0.8;
-  background: url("../img/Bg_img.png"), linear-gradient(225deg, #5596ff 0%, #ac2deb 100%);
+  background: linear-gradient(225deg, #5596ff 0%, #ac2deb 100%);
+}
+header .background .background_photo img {
+  width: 100%;
 }
 
 main .todoList {
@@ -56,6 +77,7 @@ main .todoList .shapeIcon {
   align-items: center;
   transform: translate(-50%, -50%);
   justify-content: space-between;
+  cursor: pointer;
 }
 main .todoList .shapeIcon h2 {
   color: #fff;

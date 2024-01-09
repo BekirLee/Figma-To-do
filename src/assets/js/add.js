@@ -1,6 +1,8 @@
 let listsUl = document.querySelector('.listsUl');
 let todoInput = document.querySelector('.todoInput')
 let todoListForm = document.querySelector('.todoList-form');
+let editId;
+let edited = false;
 
 let todos = JSON.parse(localStorage.getItem('todos')) || []; // nullish operators
 
@@ -8,20 +10,26 @@ let todos = JSON.parse(localStorage.getItem('todos')) || []; // nullish operator
 
 todoListForm.addEventListener('submit', (e) => {
     let todo = todoInput.value.trim();
-    let taskInfo = {
-        name: todo,
-        completed: "pending",
+    if (edited) {
+        todos[editId].name = todo;
     }
+    else {
+        let taskInfo = {
+            name: todo,
+            completed: "pending",
+        }
 
-    todos.push(taskInfo);
+        todos.push(taskInfo);
 
+    }
+    
     console.log(todo);
-
+    
     localStorage.setItem('todos', JSON.stringify(todos));
     console.log(todos);
-    e.preventDefault();
-
     showForm();
+    // e.preventDefault();
+
 })
 
 // }
@@ -42,7 +50,7 @@ function showForm() {
             <div class="otherBtns">
                 <div class="btns">
                     <button onclick="deleteTodo(${id})">Delete</button>
-                    <button>Edit</button>
+                    <button onclick="editTodo(${id},'${todo.name}')">Edit</button>
                 </div>
             </div>
         </li>`;
@@ -79,3 +87,31 @@ function deleteTodo(todoId) {
     showForm();
     console.log(todos);
 }
+
+function editTodo(todoId, todoText) {
+    edited = true;
+    editId = todoId;
+    todoInput.value = todoText;
+    console.log(todoId, todoText)
+}
+
+
+const themeIcon = document.querySelector(".shapeIcon");
+const root = document.querySelector(":root");
+themeIcon.addEventListener("click", function () {
+console.log('hello')
+    document.body.classList.toggle("active");
+  //* Dark theme switched
+  if (document.body.classList.contains("active")) { 
+    themeIcon.querySelector("img").src = "src/assets/img/Combined Shape.svg";
+    localStorage.setItem("theme", "dark");
+
+    root.style.setProperty("--bg-white", "--bg-dark");
+    root.style.setProperty("--bg-MulledWine", "--text-dark");
+  }
+  //* Light theme switched
+  else {
+    themeIcon.querySelector("img").src = "src/assets/img/icons8-sun-50.png";
+    localStorage.setItem("theme", "light");
+  }
+});
