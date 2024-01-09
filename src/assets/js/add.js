@@ -22,9 +22,9 @@ todoListForm.addEventListener('submit', (e) => {
         todos.push(taskInfo);
 
     }
-    
+
     console.log(todo);
-    
+
     localStorage.setItem('todos', JSON.stringify(todos));
     console.log(todos);
     showForm();
@@ -95,23 +95,24 @@ function editTodo(todoId, todoText) {
     console.log(todoId, todoText)
 }
 
+//! Theme switching side 
 
 const themeIcon = document.querySelector(".shapeIcon");
-const root = document.querySelector(":root");
+// const root = document.querySelector(":root");
 themeIcon.addEventListener("click", function () {
-console.log('hello')
+    // console.log('hello')
     document.body.classList.toggle("active");
-  //* Dark theme switched
-  if (document.body.classList.contains("active")) { 
-    themeIcon.querySelector("img").src = "src/assets/img/Combined Shape.svg";
-    localStorage.setItem("theme", "dark");
+    //* Dark Theme on 
+    if (document.body.classList.contains("active")) {
+        themeIcon.querySelector("img").src = "src/assets/img/Combined Shape.svg";
+        localStorage.setItem("theme", "dark");
 
-    root.style.setProperty("--bg-white", "--bg-dark");
-    root.style.setProperty("--bg-MulledWine", "--text-dark");
-  }
-  //* Light theme switched
-  else {
-    themeIcon.querySelector("img").src = "src/assets/img/icons8-sun-50.png";
-    localStorage.setItem("theme", "light");
-  }
+        root.style.setProperty("$white", "$mercury");
+        root.style.setProperty("$mulledWine", "$mulledWine");
+    }
+    //* Light Theme on
+    else {
+        themeIcon.querySelector("img").src = "src/assets/img/icons8-sun-50.png";
+        localStorage.setItem("theme", "light");
+    }
 });

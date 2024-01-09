@@ -237,3 +237,8 @@ main {
         }
     }
 }
+
+.active {
+    text-decoration: line-through;
+    color: $MountainMist !important;
+}
