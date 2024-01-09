@@ -4,27 +4,36 @@ let todoListForm = document.querySelector('.todoList-form');
 
 let todos = JSON.parse(localStorage.getItem('todos')) || []; // nullish operators
 
+// function addList() {
 
-function addList() {
-    todoListForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        let todo = todoInput.value.trim();
+todoListForm.addEventListener('submit', (e) => {
+    let todo = todoInput.value.trim();
+    let taskInfo = {
+        name: todo,
+        completed: "pending",
+    }
 
-        let taskInfo = {
-            name: todo,
-            completed: "pending",
-        }
+    todos.push(taskInfo);
 
-        todos.push(taskInfo);
+    console.log(todo);
 
-        console.log(todo);
-        // console.log('hello');
-        // console.log('hello');
-        listsUl.innerHTML = '';
+    localStorage.setItem('todos', JSON.stringify(todos));
+    console.log(todos);
+    e.preventDefault();
 
-        todos.forEach((todo, id) => {
-            let isCompleted = todo.completed === 'done' ? 'checked' : '';
-            listsUl.innerHTML += `  
+    showForm();
+})
+
+// }
+
+function showForm() {
+
+
+    listsUl.innerHTML = '';
+
+    todos.forEach((todo, id) => {
+        let isCompleted = todo.completed === 'done' ? 'checked' : '';
+        listsUl.innerHTML += `  
         <li class="addedList lists" id='${id}'>
             <div class="addedList_checkbox">
                     <input type="checkbox" name="" id="" class="mainCheckbox" ${isCompleted} onclick="updateTodo(this)"/>
@@ -32,22 +41,19 @@ function addList() {
             </div>
             <div class="otherBtns">
                 <div class="btns">
-                    <button >Delete</button>
+                    <button onclick="deleteTodo(${id})">Delete</button>
                     <button>Edit</button>
                 </div>
             </div>
         </li>`;
 
 
-        })
-
-        todoInput.value = '';
-        localStorage.setItem('todos', JSON.stringify(todos));
-        console.log(todos);
     })
 
+    todoInput.value = '';
+
 }
-addList();
+showForm();
 
 function updateTodo(e) {
     let parent = e.parentElement.parentElement;
@@ -67,4 +73,9 @@ function updateTodo(e) {
 }
 
 
-
+function deleteTodo(todoId) {
+    todos.splice(todoId, 1);
+    localStorage.setItem('todos', JSON.stringify(todos));
+    showForm();
+    console.log(todos);
+}
