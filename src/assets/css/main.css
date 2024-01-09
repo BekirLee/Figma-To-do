@@ -168,6 +168,7 @@ main .todoList .editButtons .statusItems button {
   background-color: #fff;
   border: none;
   padding: 3px;
+  cursor: pointer;
 }
 main .todoList .editButtons .clearItems button {
   color: #9495A5;
@@ -179,6 +180,7 @@ main .todoList .editButtons .clearItems button {
   letter-spacing: -0.194px;
   background-color: #fff;
   border: none;
+  cursor: pointer;
 }
 main .todoList .drag-drop {
   color: #9495A5;

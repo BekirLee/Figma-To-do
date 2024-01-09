@@ -55,7 +55,6 @@ function showForm() {
             </div>
         </li>`;
 
-
     })
 
     todoInput.value = '';
@@ -94,6 +93,44 @@ function editTodo(todoId, todoText) {
     todoInput.value = todoText;
     console.log(todoId, todoText)
 }
+
+function editButtons() {
+    let leftItems = document.querySelector('.leftItems');
+    let allTodos = document.querySelector('.allTodos');
+    let activeTodos = document.querySelector('.activeTodos');
+    let completedTodos = document.querySelector('.completedTodos');
+
+
+    leftItems.innerHTML = todos.length + ' left items';
+    // allTodos.addEventListener('click', () => {
+
+    //  })
+    completedTodos.addEventListener('click', (id, isCompleted) => {
+        listsUl.innerHTML = '';
+        todos.forEach((e) => {
+            if (e.completed == 'done') {
+                // console.log('hello')
+                listsUl.innerHTML += ` 
+                   <li class="addedList lists" id='${id}'>
+                <div class="addedList_checkbox">
+                        <input type="checkbox" name="" id="" class="mainCheckbox" ${isCompleted} onclick="updateTodo(this)"/>
+                        <p class='name ${isCompleted}'  >${e.name}</p>
+                </div>
+                <div class="otherBtns">
+                    <div class="btns">
+                        <button onclick="deleteTodo(${id})">Delete</button>
+                        <button onclick="editTodo(${id},'${e.name}')">Edit</button>
+                    </div>
+                </div>
+            </li>`;
+                leftItems.innerHTML = listsUl.length + ' left items';
+
+            }
+        })
+    })
+
+}
+editButtons();
 
 //! Theme switching side 
 
